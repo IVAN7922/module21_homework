@@ -1,6 +1,6 @@
 // исходный XML файл
 
-const xmlStr= `
+const xmlStr = `
     <list>
     <student>
         <name lang="en">
@@ -28,9 +28,9 @@ const xmlDom = parser.parseFromString(xmlStr, "text/xml");
 // функция создания массива объектов "студент"
 
 const studentObj = {};
-let j=0;
+let j = 0;
 
-function getStudent(obj){
+function getStudent(obj) {
   const listNode = obj.querySelector('list');
   for (const studentNode of listNode.querySelectorAll('student')) {
     const nameNode = studentNode.querySelector('name');
@@ -40,21 +40,16 @@ function getStudent(obj){
     const profNode = studentNode.querySelector('prof');
     const langAttr = nameNode.getAttribute('lang');
     studentObj[j] = [
-      { name : firstNameNode.textContent +" "+ secondNameNode.textContent, age : Number(ageNode.textContent), prof : profNode.textContent, lang : langAttr },
-    ]; 
-    j++;      
-  }      
+      { name: firstNameNode.textContent + " " + secondNameNode.textContent, age: Number(ageNode.textContent), prof: profNode.textContent, lang: langAttr },
+    ];
+    j++;
+  }
   return studentObj;
 }
 
 getStudent(xmlDom);
 
 const result = {
-  list : [studentObj]
+  list: [studentObj]
 }
 console.log("result", result);
-
-
-
-    
-

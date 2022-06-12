@@ -77,6 +77,6 @@ reqwestBtn.addEventListener('click', () => {
                 localStorage.setItem('myList', JSON.stringify(picturelist.innerHTML));
                 localStorage.setItem('myImg', JSON.stringify(pictureField.innerHTML));
             })
-            .catch(() => {})
+        .catch(() => { })
     }
 })

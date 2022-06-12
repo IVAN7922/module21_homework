@@ -1,5 +1,7 @@
-label, button,input {
-    display: block;   
+label,
+button,
+input {
+    display: block;
 }
 
 input {
